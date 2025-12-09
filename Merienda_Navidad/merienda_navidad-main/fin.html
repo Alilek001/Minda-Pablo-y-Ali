@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Completo</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="luces-navidad"></div>
+    <div class="menu-final">
+        <h1>¡Disfruta de la Merienda!</h1>
+        
+        <div class="seccion-menu">
+            <h2>Entrantes</h2>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Ensalada de Protocolo con Etiqueta al Punto</h3>
+                <p class="descripcion-plato">Perfectamente alineada, distancia entre hojas medida con regla.
+                Incluye: saludo oficial, orden de precedencias y cero alimentos reales.</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Pincho de Organización de Eventos Empresariales</h3>
+                <p class="descripcion-plato">Planificado, calendarizado, enviado por email, aprobado por tres departamentos... y 
+                cancelado a última hora como todo buen evento.</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Pincho de Contabilidad</h3>
+                <p class="descripcion-plato">Crujiente mezcla de asientos, balances
+                y ese sabor clásico a "¿Por qué no me cuadra un céntimo?"</p>
+            </div>
+        </div>
+
+        <div class="seccion-menu">
+            <h2>Principales</h2>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Lasaña de Gestión Avanzada de la Información</h3>
+                <p class="descripcion-plato">Capas infinitas de documentos, PDFs que nadie revisa
+                y una salsa secreta llamada "¿Pero dónde guardé este archivo?".</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Estofado de Gestión Financiera</h3>
+                <p class="descripcion-plato">Cocción lenta de presupuestos, gastos y previsiones,
+                servido con aroma a "este Excel pide clemencia".</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Linguini de Lenguaje de Marcas</h3>
+                <p class="descripcion-plato">Tiras de etiquetas perfectamente ordenadas,
+                con un aliño suave de HTML que se rompe por un cierre mal puesto.</p>
+            </div>
+        </div>
+
+        <div class="seccion-menu">
+            <h2>Postres</h2>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Tarta Lingüística de Francés e Inglés</h3>
+                <p class="descripcion-plato">Dulce mezcla internacional con vocabulario suave, expresiones deliciosas y un toque de pronunciación "aprobadita".</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Flan de Itinerario Personal para la Empleabilidad</h3>
+                <p class="descripcion-plato">Suave, motivador y lleno de futuro…
+                pero servido con la típica pregunta: "¿Y tú qué quieres hacer con tu vida?"</p>
+            </div>
+        </div>
+
+        <div class="seccion-menu">
+            <h2>Bebidas</h2>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Café de Digitalización Aplicada al Sistema Productivo</h3>
+                <p class="descripcion-plato">Intenso, moderno y servido en una taza con QR que nadie consigue escanear.
+                Ideal para despertarte… si el WiFi colabora.</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Limonada de Sostenibilidad Aplicada al Sistema Productivo</h3>
+                <p class="descripcion-plato">Fresca, con huella de carbono cero y sabor eco-friendly.
+                Perfecta para beber despacio y reciclar con responsabilidad.</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Malteada de Desarrollo de Aplicaciones Multiplataforma</h3>
+                <p class="descripcion-plato">Batido adaptable a cualquier vaso, copa o recipiente.
+                Cambia de sabor según el sistema operativo donde la bebas.</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato">Té de Gestión de Recursos Humanos</h3>
+                <p class="descripcion-plato">Suave, cálido y perfectamente infundido.
+                Viene con una galleta en forma de "evaluación del desempeño".</p>
+            </div>
+        </div>
+
+        <div class="mensaje-final">
+            <p>¡Feliz Navidad y buen provecho! 🎄</p>
+            <a href="index.html" class="boton">Volver al Inicio</a>
+        </div>
+    </div>
+    <script>
+        // Crear bolas de navidad con luces (responsive y simétrico perfecto)
+        function crearBolasNavidad() {
+            const lucesContainer = document.querySelector('.luces-navidad');
+            lucesContainer.innerHTML = '';
+            
+            const anchoVentana = window.innerWidth;
+            const espacioMinimo = 100;
+            let numberOfLights = Math.floor(anchoVentana / espacioMinimo);
+            
+            if (numberOfLights < 6) {
+                numberOfLights = 6;
+            } else if (numberOfLights > 16) {
+                numberOfLights = 16;
+            }
+            
+            if (numberOfLights % 2 !== 0) {
+                numberOfLights += 1;
+            }
+            
+            const colores = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff8800', '#ffffff'];
+            const espacioPorBola = (100 / numberOfLights);
+            
+            for (let i = 0; i < numberOfLights; i++) {
+                const bola = document.createElement('div');
+                bola.classList.add('bola-navidad');
+                const colorAleatorio = colores[i % colores.length];
+                bola.style.left = `calc(${espacioPorBola * i}% + ${espacioPorBola / 2}% - 12.5px)`;
+                bola.style.backgroundColor = colorAleatorio;
+                bola.style.animationDelay = (i * 0.2) + 's';
+                bola.style.boxShadow = `0 0 10px ${colorAleatorio}, 0 0 20px ${colorAleatorio}`;
+                lucesContainer.appendChild(bola);
+            }
+        }
+        
+        crearBolasNavidad();
+        window.addEventListener('resize', crearBolasNavidad);
+    </script>
+</body>
+
+</html>

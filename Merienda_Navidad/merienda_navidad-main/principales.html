@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Principales</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="luces-navidad"></div>
+    <div class="principales">
+        <h2>PRINCIPALES</h2>
+        <div class="menu-texto">
+            <div class="plato-item">
+                <h3 class="titulo-plato difuminado-alto" id="plato_principal1">Lasaña de Gestión Avanzada de la Información</h3>
+                <p class="descripcion-plato difuminado-alto" id="desc_principal1">Capas infinitas de documentos, PDFs que nadie revisa
+                y una salsa secreta llamada "¿Pero dónde guardé este archivo?".</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato difuminado-alto" id="plato_principal2">Estofado de Gestión Financiera</h3>
+                <p class="descripcion-plato difuminado-alto" id="desc_principal2">Cocción lenta de presupuestos, gastos y previsiones,
+                servido con aroma a "este Excel pide clemencia".</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato difuminado-alto" id="plato_principal3">Linguini de Lenguaje de Marcas</h3>
+                <p class="descripcion-plato difuminado-alto" id="desc_principal3">Tiras de etiquetas perfectamente ordenadas,
+                con un aliño suave de HTML que se rompe por un cierre mal puesto.</p>
+            </div>
+        </div>
+        
+        <div class="cuestionario-container">
+            <div id="div_p1">
+                <h3>Pregunta 1</h3>
+                <p class="pregunta-texto">Capas infinitas de documentos, PDFs que nadie revisa y una salsa secreta llamada
+                    "¿Pero dónde guardé este archivo?"
+                </p>
+                <form action="#" method="post" id="form_principales1">
+                    <input type="radio" id="resp_prin1" name="entrante" value="resp_prin1">
+                    <label for="resp_prin1">Estofado de Gestión Financiera</label><br>
+
+                    <input type="radio" id="resp_prin2" name="entrante" value="resp_prin2">
+                    <label for="resp_prin2">Lasaña de Gestión Avanzada de la Información</label><br>
+
+                    <input type="radio" id="resp_prin3" name="entrante" value="resp_prin3">
+                    <label for="resp_prin3">Linguini de Lenguaje de Marcas</label><br>
+
+                    <input type="radio" id="resp_prin4" name="entrante" value="resp_prin4">
+                    <label for="resp_prin4">Tarta Lingüística de Francés e Inglés</label><br>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta4')">Enviar respuesta</button>
+                </form>
+            </div>
+
+            <div id="div_p2" style="display: none">
+                <h3>Pregunta 2</h3>
+                <p class="pregunta-texto">Cocción lenta de presupuestos, gastos y previsiones,
+                    servido con aroma a "este Excel pide clemencia".
+                </p>
+                <form action="#" method="post" id="form_principales2">
+                    <input type="radio" id="resp_prin5" name="entrante" value="resp_prin5">
+                    <label for="resp_prin5">Estofado de Gestión Financiera</label><br>
+
+                    <input type="radio" id="resp_prin6" name="entrante" value="resp_prin6">
+                    <label for="resp_prin6">Lasaña de Gestión Avanzada de la Información</label><br>
+
+                    <input type="radio" id="resp_prin7" name="entrante" value="resp_prin7">
+                    <label for="resp_prin7">Linguini de Lenguaje de Marcas</label><br>
+
+                    <input type="radio" id="resp_prin8" name="entrante" value="resp_prin8">
+                    <label for="resp_prin8">Tarta Lingüística de Francés e Inglés</label><br>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta5')">Enviar respuesta</button>
+                </form>
+            </div>
+
+            <div id="div_p3" style="display: none">
+                <h3>Pregunta 3</h3>
+                <p class="pregunta-texto">Tiras de etiquetas perfectamente ordenadas, con un aliño suave de HTML que se rompe por un cierre mal puesto.
+                </p>
+                <form action="#" method="post" id="form_principales3">
+                    <input type="radio" id="resp_prin9" name="entrante" value="resp_prin9">
+                    <label for="resp_prin9">Estofado de Gestión Financiera</label><br>
+
+                    <input type="radio" id="resp_prin10" name="entrante" value="resp_prin10">
+                    <label for="resp_prin10">Lasaña de Gestión Avanzada de la Información</label><br>
+
+                    <input type="radio" id="resp_prin11" name="entrante" value="resp_prin11">
+                    <label for="resp_prin11">Linguini de Lenguaje de Marcas</label><br>
+
+                    <input type="radio" id="resp_prin12" name="entrante" value="resp_prin12">
+                    <label for="resp_prin12">Tarta Lingüística de Francés e Inglés</label><br>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta6')">Enviar respuesta</button>
+                </form>
+            </div>
+
+            <div id="div_continuar" style="display: none">
+                <a href="postres.html" class="boton">Continuar a Postres</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Crear bolas de navidad con luces (responsive y simétrico perfecto)
+        function crearBolasNavidad() {
+            const lucesContainer = document.querySelector('.luces-navidad');
+            lucesContainer.innerHTML = '';
+            
+            const anchoVentana = window.innerWidth;
+            const espacioMinimo = 100;
+            let numberOfLights = Math.floor(anchoVentana / espacioMinimo);
+            
+            if (numberOfLights < 6) {
+                numberOfLights = 6;
+            } else if (numberOfLights > 16) {
+                numberOfLights = 16;
+            }
+            
+            if (numberOfLights % 2 !== 0) {
+                numberOfLights += 1;
+            }
+            
+            const colores = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff8800', '#ffffff'];
+            const espacioPorBola = (100 / numberOfLights);
+            
+            for (let i = 0; i < numberOfLights; i++) {
+                const bola = document.createElement('div');
+                bola.classList.add('bola-navidad');
+                const colorAleatorio = colores[i % colores.length];
+                bola.style.left = `calc(${espacioPorBola * i}% + ${espacioPorBola / 2}% - 12.5px)`;
+                bola.style.backgroundColor = colorAleatorio;
+                bola.style.animationDelay = (i * 0.2) + 's';
+                bola.style.boxShadow = `0 0 10px ${colorAleatorio}, 0 0 20px ${colorAleatorio}`;
+                lucesContainer.appendChild(bola);
+            }
+        }
+        
+        crearBolasNavidad();
+        window.addEventListener('resize', crearBolasNavidad);
+    </script>
+</body>
+
+</html>

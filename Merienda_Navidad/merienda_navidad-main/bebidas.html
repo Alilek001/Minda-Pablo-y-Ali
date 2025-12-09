@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bebidas</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="luces-navidad"></div>
+    <div class="bebidas">
+        <h2>Bebidas</h2>
+        <div class="menu-texto">
+            <div class="plato-item">
+                <h3 class="titulo-plato difuminado-alto" id="plato_bebida1">Café de Digitalización Aplicada al Sistema Productivo</h3>
+                <p class="descripcion-plato difuminado-alto" id="desc_bebida1">Intenso, moderno y servido en una taza con QR que nadie consigue escanear.
+                Ideal para despertarte… si el WiFi colabora.</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato difuminado-alto" id="plato_bebida2">Limonada de Sostenibilidad Aplicada al Sistema Productivo</h3>
+                <p class="descripcion-plato difuminado-alto" id="desc_bebida2">Fresca, con huella de carbono cero y sabor eco-friendly.
+                Perfecta para beber despacio y reciclar con responsabilidad.</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato difuminado-alto" id="plato_bebida3">Malteada de Desarrollo de Aplicaciones Multiplataforma</h3>
+                <p class="descripcion-plato difuminado-alto" id="desc_bebida3">Batido adaptable a cualquier vaso, copa o recipiente.
+                Cambia de sabor según el sistema operativo donde la bebas.</p>
+            </div>
+            <div class="plato-item">
+                <h3 class="titulo-plato difuminado-alto" id="plato_bebida4">Té de Gestión de Recursos Humanos</h3>
+                <p class="descripcion-plato difuminado-alto" id="desc_bebida4">Suave, cálido y perfectamente infundido.
+                Viene con una galleta en forma de "evaluación del desempeño".</p>
+            </div>
+        </div>
+        
+        <div class="cuestionario-container">
+            <div id="div_p1">
+                <h3>Pregunta 1</h3>
+                <p class="pregunta-texto">Intenso, moderno y servido en una taza con QR que nadie consigue escanear.
+                 Ideal para despertarte… si el WiFi colabora.
+                </p>
+                <form action="#" method="post" id="form_bebida1">
+                    <input type="radio" id="resp_bebida1" name="entrante" value="resp_bebida1">
+                    <label for="resp_bebida1">Té de Gestión de Recursos Humanos</label><br>
+
+                    <input type="radio" id="resp_bebida2" name="entrante" value="resp_bebida2">
+                    <label for="resp_bebida2">Malteada de Desarrollo de Aplicaciones Multiplataforma</label><br>
+
+                    <input type="radio" id="resp_bebida3" name="entrante" value="resp_bebida3">
+                    <label for="resp_bebida3">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+
+                    <input type="radio" id="resp_bebida4" name="entrante" value="resp_bebida4">
+                    <label for="resp_bebida4">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta9')">Enviar respuesta</button>
+                </form>
+            </div>
+
+            <div id="div_p2" style="display: none">
+                <h3>Pregunta 2</h3>
+                <p class="pregunta-texto">Fresca, con huella de carbono cero y sabor eco-friendly.
+                    Perfecta para beber despacio y reciclar con responsabilidad.
+                </p>
+                <form action="#" method="post" id="form_bebida2">
+                    <input type="radio" id="resp_bebida5" name="entrante" value="resp_bebida5">
+                    <label for="resp_bebida5">Té de Gestión de Recursos Humanos</label><br>
+
+                    <input type="radio" id="resp_bebida6" name="entrante" value="resp_bebida6">
+                    <label for="resp_bebida6">Malteada de Desarrollo de Aplicaciones Multiplataforma</label><br>
+
+                    <input type="radio" id="resp_bebida7" name="entrante" value="resp_bebida7">
+                    <label for="resp_bebida7">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+
+                    <input type="radio" id="resp_bebida8" name="entrante" value="resp_bebida8">
+                    <label for="resp_bebida8">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta10')">Enviar respuesta</button>
+                </form>
+            </div>
+
+            <div id="div_p3" style="display: none">
+                <h3>Pregunta 3</h3>
+                <p class="pregunta-texto">Batido adaptable a cualquier vaso, copa o recipiente.
+                   Cambia de sabor según el sistema operativo donde la bebas.
+                </p>
+                <form action="#" method="post" id="form_bebida3">
+                    <input type="radio" id="resp_bebida9" name="entrante" value="resp_bebida9">
+                    <label for="resp_bebida9">Té de Gestión de Recursos Humanos</label><br>
+
+                    <input type="radio" id="resp_bebida10" name="entrante" value="resp_bebida10">
+                    <label for="resp_bebida10">Malteada de Desarrollo de Aplicaciones Multiplataforma</label><br>
+
+                    <input type="radio" id="resp_bebida11" name="entrante" value="resp_bebida11">
+                    <label for="resp_bebida11">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+
+                    <input type="radio" id="resp_bebida12" name="entrante" value="resp_bebida12">
+                    <label for="resp_bebida12">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta11')">Enviar respuesta</button>
+                </form>
+            </div>
+
+            <div id="div_p4" style="display: none">
+                <h3>Pregunta 4</h3>
+                <p class="pregunta-texto">Suave, cálido y perfectamente infundido.
+                    Viene con una galleta en forma de "evaluación del desempeño".
+                </p>
+                <form action="#" method="post" id="form_bebida4">
+                    <input type="radio" id="resp_bebida13" name="entrante" value="resp_bebida9">
+                    <label for="resp_bebida13">Té de Gestión de Recursos Humanos</label><br>
+
+                    <input type="radio" id="resp_bebida14" name="entrante" value="resp_bebida10">
+                    <label for="resp_bebida14">Malteada de Desarrollo de Aplicaciones Multiplataforma</label><br>
+
+                    <input type="radio" id="resp_bebida15" name="entrante" value="resp_bebida11">
+                    <label for="resp_bebida15">Limonada de Sostenibilidad Aplicada al Sistema Productivo</label><br>
+
+                    <input type="radio" id="resp_bebida16" name="entrante" value="resp_bebida12">
+                    <label for="resp_bebida16">Café de Digitalización Aplicada al Sistema Productivo</label><br>
+
+                    <button type="button" class="boton" onclick="verificarRespuesta('pregunta12')">Enviar respuesta</button>
+                </form>
+            </div>
+
+            <div id="div_continuar" style="display: none">
+                <a href="fin.html" class="boton">Ver Menú Completo</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Crear bolas de navidad con luces (responsive y simétrico perfecto)
+        function crearBolasNavidad() {
+            const lucesContainer = document.querySelector('.luces-navidad');
+            lucesContainer.innerHTML = '';
+            
+            const anchoVentana = window.innerWidth;
+            const espacioMinimo = 100;
+            let numberOfLights = Math.floor(anchoVentana / espacioMinimo);
+            
+            if (numberOfLights < 6) {
+                numberOfLights = 6;
+            } else if (numberOfLights > 16) {
+                numberOfLights = 16;
+            }
+            
+            if (numberOfLights % 2 !== 0) {
+                numberOfLights += 1;
+            }
+            
+            const colores = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff8800', '#ffffff'];
+            const espacioPorBola = (100 / numberOfLights);
+            
+            for (let i = 0; i < numberOfLights; i++) {
+                const bola = document.createElement('div');
+                bola.classList.add('bola-navidad');
+                const colorAleatorio = colores[i % colores.length];
+                bola.style.left = `calc(${espacioPorBola * i}% + ${espacioPorBola / 2}% - 12.5px)`;
+                bola.style.backgroundColor = colorAleatorio;
+                bola.style.animationDelay = (i * 0.2) + 's';
+                bola.style.boxShadow = `0 0 10px ${colorAleatorio}, 0 0 20px ${colorAleatorio}`;
+                lucesContainer.appendChild(bola);
+            }
+        }
+        
+        crearBolasNavidad();
+        window.addEventListener('resize', crearBolasNavidad);
+    </script>
+</body>
+
+</html>

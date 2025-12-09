@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merienda Navideña</title>
+    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <script src="js/script.js"></script>
+</head>
+
+<body>
+    <div class="snow-container"></div>
+    <div class="luces-navidad"></div>
+    <div class="contenido-index">
+        <h1>Merienda Navideña 2025</h1>
+
+        <p class="texto-intro">Si el menú de la merienda deseas conocer,<br>
+            las siguientes adivinanzas tendrás que resolver</p>
+        <a href="entrantes.html" class="boton">Comenzar</a>
+    </div>
+    <script>
+        // Crear copos de nieve
+        const snowContainer = document.querySelector('.snow-container');
+        const numberOfSnowflakes = 50;
+        
+        for (let i = 0; i < numberOfSnowflakes; i++) {
+            const snowflake = document.createElement('div');
+            snowflake.classList.add('snowflake');
+            snowflake.innerHTML = '❄';
+            snowflake.style.left = Math.random() * 100 + '%';
+            snowflake.style.animationDuration = Math.random() * 3 + 2 + 's';
+            snowflake.style.animationDelay = Math.random() * 5 + 's';
+            snowflake.style.fontSize = Math.random() * 10 + 10 + 'px';
+            snowflake.style.opacity = Math.random() * 0.6 + 0.4;
+            snowContainer.appendChild(snowflake);
+        }
+
+        // Crear bolas de navidad con luces (responsive y simétrico perfecto)
+        function crearBolasNavidad() {
+            const lucesContainer = document.querySelector('.luces-navidad');
+            lucesContainer.innerHTML = ''; // Limpiar bolas existentes
+            
+            const anchoVentana = window.innerWidth;
+            const espacioMinimo = 100; // Espacio mínimo entre bolas en píxeles
+            let numberOfLights = Math.floor(anchoVentana / espacioMinimo);
+            
+            // Asegurar mínimo de 6 bolas y que sea par para simetría
+            if (numberOfLights < 6) {
+                numberOfLights = 6;
+            } else if (numberOfLights > 16) {
+                numberOfLights = 16;
+            }
+            
+            // Hacer que sea par para simetría
+            if (numberOfLights % 2 !== 0) {
+                numberOfLights += 1;
+            }
+            
+            const colores = ['#ff0000', '#00ff00', '#0000ff', '#ffff00', '#ff00ff', '#00ffff', '#ff8800', '#ffffff'];
+            const anchoBola = 25; // Ancho de la bola en píxeles
+            const espacioTotal = numberOfLights - 1; // Espacios entre bolas
+            const espacioPorBola = (100 / numberOfLights); // Espacio por cada bola
+            
+            for (let i = 0; i < numberOfLights; i++) {
+                const bola = document.createElement('div');
+                bola.classList.add('bola-navidad');
+                const colorAleatorio = colores[i % colores.length];
+                // Centrar cada bola en su sección correspondiente
+                bola.style.left = `calc(${espacioPorBola * i}% + ${espacioPorBola / 2}% - 12.5px)`;
+                bola.style.backgroundColor = colorAleatorio;
+                bola.style.animationDelay = (i * 0.2) + 's';
+                bola.style.boxShadow = `0 0 10px ${colorAleatorio}, 0 0 20px ${colorAleatorio}`;
+                lucesContainer.appendChild(bola);
+            }
+        }
+        
+        // Crear bolas al cargar
+        crearBolasNavidad();
+        
+        // Recrear bolas al cambiar el tamaño de la ventana
+        window.addEventListener('resize', crearBolasNavidad);
+    </script>
+</body>
+
+</html>

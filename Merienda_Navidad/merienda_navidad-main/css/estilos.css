@@ -1,0 +1,383 @@
+/* Estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    position: relative;
+    margin: 0;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+/* Fondo difuminado */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/casa_navidad.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    filter: blur(3px);
+    z-index: -1;
+}
+
+/* Fuente personalizada */
+@font-face {
+  font-family: 'navidad';
+  src: url('../fonts/Amore Christmas.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'navidad2';
+  src: url('../fonts/Foremost\ Regular.ttf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+h1 {
+  font-family: 'navidad', cursive;
+  font-size: 60px;
+  color: #c41e3a;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  margin: 20px 0;
+}
+
+h2 {
+  font-family: 'navidad', cursive;
+  font-size: 40px;
+  color: #c41e3a;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  margin: 20px 0;
+}
+
+h3 {
+  font-size: 26px;
+  color: #165b33;
+  margin: 10px 0;
+  font-family: navidad;
+}
+
+/* Contenedor principal del index */
+.contenido-index {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    max-width: 800px;
+    margin: 100px auto;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.texto-intro {
+    font-size: 24px;
+    line-height: 1.8;
+    margin: 30px 0;
+    color: #333;
+    font-family: navidad2;
+}
+
+/* Animación de nieve */
+.snow-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.snowflake {
+    position: absolute;
+    top: -20px;
+    color: white;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.8);
+    animation: fall linear infinite;
+    user-select: none;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+/* Luces de navidad */
+.luces-navidad {
+    position: fixed;
+    top: 20px;
+    left: 0;
+    width: 100%;
+    height: 40px;
+    z-index: 999;
+    pointer-events: none;
+}
+
+.bola-navidad {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    top: 0;
+    animation: parpadeo 2s ease-in-out infinite;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.bola-navidad::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 3px;
+    height: 8px;
+    background: #666;
+    border-radius: 2px;
+}
+
+.bola-navidad::after {
+    content: '';
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 1px;
+    height: 15px;
+    background: #333;
+}
+
+@keyframes parpadeo {
+    0%, 100% {
+        opacity: 1;
+        filter: brightness(1.5);
+    }
+    50% {
+        opacity: 0.3;
+        filter: brightness(0.5);
+    }
+}
+
+/* Contenedor de secciones */
+div {
+    text-align: center;
+}
+
+.entrantes, .principales, .postres, .bebidas {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Texto del menú con difuminado */
+.menu-texto {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.plato-item {
+    margin: 25px 0;
+    padding: 15px;
+    border-bottom: 2px dashed #c41e3a;
+}
+
+.plato-item:last-child {
+    border-bottom: none;
+}
+
+.titulo-plato {
+    font-family: 'navidad', cursive;
+    font-size: 28px;
+    font-style: italic;
+    color: #165b33;
+    margin-bottom: 10px;
+}
+
+.descripcion-plato {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #555;
+}
+
+/* Niveles de difuminado */
+.difuminado-alto {
+    filter: blur(8px);
+    transition: filter 0.5s ease;
+}
+
+.difuminado-medio {
+    filter: blur(5px);
+    transition: filter 0.5s ease;
+}
+
+.difuminado-bajo {
+    filter: blur(2px);
+    transition: filter 0.5s ease;
+}
+
+.sin-difuminado {
+    filter: blur(0px);
+    transition: filter 0.5s ease;
+}
+
+/* Contenedor de cuestionarios */
+.cuestionario-container {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 20px auto;
+    max-width: 800px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.pregunta-texto {
+    font-size: 22px;
+    line-height: 1.8;
+    margin: 20px 0;
+    padding: 15px;
+    background-color: rgba(196, 30, 58, 0.1);
+    border-radius: 10px;
+    color: #333;
+    font-family: navidad2;
+}
+
+/* Estilos de formularios */
+form {
+    margin: 20px 0;
+    text-align: left;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="radio"] {
+    margin: 15px 10px 15px 0;
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+label {
+    font-size: 18px;
+    line-height: 2.5;
+    cursor: pointer;
+    color: #333;
+}
+
+label:hover {
+    color: #c41e3a;
+}
+
+/* Estilo del botón */
+.boton {
+    padding: 15px 40px;
+    background-color: #165b33;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 10px;
+    border: none;
+    display: inline-block;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+    animation: oscilar 2s ease-in-out infinite;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+}
+
+.boton:hover {
+    background-color: #c41e3a;
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* Animación del botón */
+@keyframes oscilar {
+    0% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(10px);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Menú final */
+.menu-final {
+    padding: 30px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.seccion-menu {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    margin: 30px auto;
+    max-width: 900px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.mensaje-final {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 15px;
+    padding: 40px;
+    margin: 40px auto;
+    max-width: 600px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.mensaje-final p {
+    font-size: 32px;
+    font-family: 'navidad', cursive;
+    color: #c41e3a;
+    margin-bottom: 20px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 40px;
+    }
+    
+    h2 {
+        font-size: 32px;
+    }
+    
+    .texto-intro {
+        font-size: 18px;
+    }
+    
+    .titulo-plato {
+        font-size: 22px;
+    }
+    
+    .descripcion-plato {
+        font-size: 16px;
+    }
+        
+    label {
+        font-size: 16px;
+    }
+    
+    .boton {
+        font-size: 18px;
+        padding: 12px 30px;
+    }
+}
